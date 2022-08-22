@@ -6,11 +6,11 @@
 #    By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 16:06:31 by hannkim           #+#    #+#              #
-#    Updated: 2022/08/22 16:15:02 by hannkim          ###   ########.fr        #
+#    Updated: 2022/08/22 20:34:52 by hannkim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX					= clang++
+CXX					= c++
 
 ifdef DEBUG
 	CXXFLAGS	= --std=c++98 -g3 -fsanitize=address
