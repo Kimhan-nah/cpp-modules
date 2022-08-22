@@ -6,11 +6,11 @@
 #    By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 16:06:31 by hannkim           #+#    #+#              #
-#    Updated: 2022/07/13 16:06:53 by hannkim          ###   ########.fr        #
+#    Updated: 2022/08/22 16:15:02 by hannkim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX					= c++
+CXX					= clang++
 
 ifdef DEBUG
 	CXXFLAGS	= --std=c++98 -g3 -fsanitize=address
@@ -20,15 +20,9 @@ else
 	CXXFLAGS	= --std=c++98 -Wall -Wextra -Werror
 endif
 
-NAME				=  #Name of program
+NAME				=  megaphone
 
-INC_DIR			= ./includes/
-
-SRCS_DIR		= ./srcs/
-
-SRCS				= $(addprefix $(SRCS_DIR), \
-								main.cpp \
-							)
+SRCS				= megaphone.cpp \
 
 OBJS				= ${SRCS:%.cpp=%.o}
 
@@ -54,14 +48,14 @@ CUT = "\033[K"
 all				:	$(OBJS) $(NAME)
 
 $(NAME)		:	$(OBJS)
-						@$(CXX) $(CXXFLAGS) $(OBJS) -I$(INC_DIR) -o $@
+						@$(CXX) $(CXXFLAGS) $(OBJS) -o $@
 						@echo  $(L_CYAN) 🔗 Linking [$(notdir $^)] to [$@] $(RESET)
 						$(COMPILE_MSG)
 
 
 %.o				:	%.cpp
-						@$(CXX) $(CXXFLAGS) -I$(INC_DIR)  -c $< -o $@
-						@echo $(BOLD)$(L_GREEN) Compiling with $(CXXFLAGS) -I$(INC_DIR) ...$(RESET)
+						@$(CXX) $(CXXFLAGS) -c $< -o $@
+						@echo $(BOLD)$(L_GREEN) Compiling with $(CXXFLAGS) ...$(RESET)
 						@echo $(GREEN) [$(notdir $^)] to [$(notdir $@)] $(RESET)
 
 .PHONY		:	clean
