@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/08/22 20:18:53 by hannkim           #+#    #+#              #
+#    Updated: 2022/08/22 20:38:29 by hannkim          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CXX					= c++
 
 ifdef DEBUG
@@ -16,6 +28,8 @@ SRCS_DIR		= ./srcs/
 
 SRCS				= $(addprefix $(SRCS_DIR), \
 								main.cpp \
+								PhoneBook.cpp \
+								Contact.cpp \
 							)
 
 OBJS				= ${SRCS:%.cpp=%.o}
