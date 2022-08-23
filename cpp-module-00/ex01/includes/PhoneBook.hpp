@@ -6,11 +6,13 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 20:40:05 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/22 21:07:37 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/23 17:17:24 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
+# include "Contact.hpp"
 
 class PhoneBook {
 private:
@@ -20,3 +22,5 @@ public:
 	void	searchContact();
 	void	exitPhoneBook();
 };
+
+#endif

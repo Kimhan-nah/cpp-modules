@@ -6,11 +6,13 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 20:39:57 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/22 20:45:10 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/23 17:17:44 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
+# include <string>
 
 class Contact {
 private:
@@ -20,3 +22,4 @@ private:
 	std::string lastName;
 	std::string nickname;
 };
+#endif
