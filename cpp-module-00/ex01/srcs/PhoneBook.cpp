@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 20:18:42 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/24 17:19:52 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/24 17:41:13 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ void	PhoneBook::add()
 	std::getline(std::cin, phoneNum);
 	std::cout << "Darkest Secret : ";
 	std::getline(std::cin, darkestSecret);
-	std::cout <<  "\nSaved!!!\n\n\n";
 
 	if (phoneNum.empty() || firstName.empty() || lastName.empty() ||
 			nickname.empty() || darkestSecret.empty())
 		std::cout << "\nAll blanks must be filled in.\nNot saved.\n\n";
 	else
 	{
+		std::cout <<  "\nSaved!!!\n\n\n";
 		Contact newContact(count % SIZE, firstName, lastName, nickname, phoneNum, darkestSecret);
 		contacts[count % SIZE] = newContact;
 		count++;
