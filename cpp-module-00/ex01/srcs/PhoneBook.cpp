@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 20:18:42 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/24 17:41:13 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/24 22:58:39 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	PhoneBook::search()
 	std::cout << std::endl << "Select index : ";
 	std::getline(std::cin, idx);
 	if (checkValidIndex(idx))
-		displayOne(stoi(idx));
+		displayOne(atoi(idx.c_str()));
 	else
 		std::cout << "Wrong index...\n\n";
 }
@@ -105,8 +105,8 @@ bool	PhoneBook::checkValidIndex(std::string idx)
 		if (!isdigit(idx[i]))
 			return (false);
 	}
-	int tmp = stoi(idx);
-	if (tmp < 0 || tmp >= SIZE || tmp >= count)
+	int tmp = atoi(idx.c_str());
+	if (tmp < 0 || tmp >= SIZE || tmp >= count || idx.empty())
 		return (false);
 	return (true);
 }
@@ -115,6 +115,7 @@ std::string	PhoneBook::resizeString(std::string str)
 {
 	if (str.length() > 9)
 	{
+		str = str.substr(0, 9);
 		str.append(1, '.');
 	}
 	return (str);

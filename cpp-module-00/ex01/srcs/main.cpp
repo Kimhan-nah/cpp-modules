@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 20:18:38 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/24 16:43:15 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/24 21:02:15 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main()
 	{
 		std::cout << "Choose one of 'ADD', 'SEARCH', 'EXIT' : ";
 		std::getline(std::cin, input);
-		std::cout << input << std::endl;
 		if (!input.compare("ADD")) {
 			phonebook.add();
 		}
