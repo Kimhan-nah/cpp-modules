@@ -6,7 +6,7 @@
 #    By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/22 20:18:53 by hannkim           #+#    #+#              #
-#    Updated: 2022/08/22 20:38:29 by hannkim          ###   ########.fr        #
+#    Updated: 2022/08/24 09:43:39 by hannkim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ else
 	CXXFLAGS	= --std=c++98 -Wall -Wextra -Werror
 endif
 
-NAME				=  #Name of program
+NAME				=  phonebook
 
 INC_DIR			= ./includes/
 
