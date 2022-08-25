@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 20:18:42 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/24 22:58:39 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/25 20:23:07 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,20 @@ void	PhoneBook::add()
 
 	std::cout << "===Write your information===\n";
 	std::cout << "First Name : ";
-	std::getline(std::cin, firstName);
+	if (!std::getline(std::cin, firstName))
+		std::exit(EXIT_FAILURE);
 	std::cout << "Last Name : ";
-	std::getline(std::cin, lastName);
+	if (!std::getline(std::cin, lastName))
+		std::exit(EXIT_FAILURE);
 	std::cout << "Nickname : ";
-	std::getline(std::cin, nickname);
+	if (!std::getline(std::cin, nickname))
+		std::exit(EXIT_FAILURE);
 	std::cout << "Phone Number : ";
-	std::getline(std::cin, phoneNum);
+	if (!std::getline(std::cin, phoneNum))
+		std::exit(EXIT_FAILURE);
 	std::cout << "Darkest Secret : ";
-	std::getline(std::cin, darkestSecret);
+	if (std::getline(std::cin, darkestSecret))
+		std::exit(EXIT_FAILURE);
 
 	if (phoneNum.empty() || firstName.empty() || lastName.empty() ||
 			nickname.empty() || darkestSecret.empty())
@@ -56,7 +61,8 @@ void	PhoneBook::search()
 	std::string	idx;
 
 	std::cout << std::endl << "Select index : ";
-	std::getline(std::cin, idx);
+	if (!std::getline(std::cin, idx))
+		exit();
 	if (checkValidIndex(idx))
 		displayOne(atoi(idx.c_str()));
 	else
