@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 20:18:42 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/25 20:23:07 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/25 20:31:10 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	PhoneBook::add()
 	if (!std::getline(std::cin, phoneNum))
 		std::exit(EXIT_FAILURE);
 	std::cout << "Darkest Secret : ";
-	if (std::getline(std::cin, darkestSecret))
+	if (!std::getline(std::cin, darkestSecret))
 		std::exit(EXIT_FAILURE);
 
 	if (phoneNum.empty() || firstName.empty() || lastName.empty() ||
@@ -62,7 +62,7 @@ void	PhoneBook::search()
 
 	std::cout << std::endl << "Select index : ";
 	if (!std::getline(std::cin, idx))
-		exit();
+		std::exit(EXIT_FAILURE);
 	if (checkValidIndex(idx))
 		displayOne(atoi(idx.c_str()));
 	else
