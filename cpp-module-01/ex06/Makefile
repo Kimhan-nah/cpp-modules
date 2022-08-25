@@ -6,7 +6,7 @@
 #    By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 16:06:31 by hannkim           #+#    #+#              #
-#    Updated: 2022/08/25 23:13:39 by hannkim          ###   ########.fr        #
+#    Updated: 2022/08/26 07:55:24 by hannkim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ else
 	CXXFLAGS	= --std=c++98 -Wall -Wextra -Werror
 endif
 
-NAME				=  Harl
+NAME				=  harlFilter
 
 SRCS				= main.cpp Harl.cpp
 
