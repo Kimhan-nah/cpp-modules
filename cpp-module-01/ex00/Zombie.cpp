@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 08:00:50 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/25 10:39:18 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/25 11:14:43 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ Zombie::~Zombie(void)
 
 void	Zombie::announce(void)
 {
-	std::cout << _name << ": BraiiiiiiinnnnzzzzzzZ...\n";
+	std::cout << _name << ": BraiiiiiiinnnzzzZ...\n";
 }
