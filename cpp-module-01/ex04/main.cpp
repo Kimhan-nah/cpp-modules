@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 15:54:35 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/26 09:55:39 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/26 10:08:01 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	writeFile(std::ifstream &infile, std::ofstream &outfile, std::string target
 	{
 		std::getline(infile, str);
 		index = 0;
-		while (index < str.length())
+		while (index < str.length() && !target.empty())
 		{
 			index = str.find(target, index);
 			if (index != std::string::npos)
@@ -69,7 +69,7 @@ int main(int argc, char **argv)
 	std::ifstream	infile;
 	std::ofstream	outfile;
 
-	if (argc != 4 || !(*argv[1]) || !(*argv[2]) || !(*argv[3]))
+	if (argc != 4 || !argv[1] || !argv[2] || !argv[3])
 	{
 		std::cerr << "Error: Arguments\n";
 		exit(EXIT_FAILURE);
