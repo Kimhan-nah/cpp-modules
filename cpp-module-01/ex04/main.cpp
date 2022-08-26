@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 15:54:35 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/25 23:09:57 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/26 09:55:39 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ void	writeFile(std::ifstream &infile, std::ofstream &outfile, std::string target
 
 	while (!infile.eof())
 	{
-		std::getline(infile, str);		// 파일에서 한줄씩 읽어서 str에 저장
+		std::getline(infile, str);
 		index = 0;
 		while (index < str.length())
 		{
 			index = str.find(target, index);
-			if (index != std::string::npos)		// find 리턴 값이 해당 위치 인덱스 -> 못 찾을 경우 굉장히 큰 쓰레기 값이 리턴 됨 -> npos 사용
+			if (index != std::string::npos)
 			{
 				str.erase(index, target.length());
 				str.insert(index, replace);
@@ -78,10 +78,7 @@ int main(int argc, char **argv)
 	target = argv[2];
 	replace = argv[3];
 
-	// open file
 	openFile(infile, outfile, filename);
-
-	// wirte file and replace
 	writeFile(infile, outfile, target, replace);
 
 	infile.close();

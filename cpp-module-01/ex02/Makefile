@@ -6,7 +6,7 @@
 #    By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 16:06:31 by hannkim           #+#    #+#              #
-#    Updated: 2022/08/25 11:38:54 by hannkim          ###   ########.fr        #
+#    Updated: 2022/08/26 08:52:24 by hannkim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ else
 	CXXFLAGS	= --std=c++98 -Wall -Wextra -Werror
 endif
 
-NAME				= reference
+NAME				= brain
 
 SRCS				= main.cpp\
 

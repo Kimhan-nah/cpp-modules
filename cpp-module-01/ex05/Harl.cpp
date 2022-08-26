@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 23:14:34 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/26 08:03:29 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/26 09:45:24 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	Harl::complain(std::string level)
 		{
 			std::cout << "[ " << level << " ]\n";
 			(this->*fp[i])();		// function call
-			break;
+			return ;
 		}
     }
 }

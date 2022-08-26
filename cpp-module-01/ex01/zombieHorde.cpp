@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 10:43:21 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/25 11:11:58 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/26 08:41:50 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Zombie	*zombieHorde(int N, std::string name)
 		char ch = i + '0';
 		zombies[i].setName(name + ch);
 	}
-	// Zombie *zombies = new Zombie[3] = { Zombie(name), Zombie("han"), Zombie() };
 
 	return (zombies);
 }
