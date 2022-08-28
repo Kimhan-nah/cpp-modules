@@ -6,7 +6,7 @@
 #    By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/22 20:18:53 by hannkim           #+#    #+#              #
-#    Updated: 2022/08/27 08:02:32 by hannkim          ###   ########.fr        #
+#    Updated: 2022/08/27 18:52:17 by hannkim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ else
 	CXXFLAGS	= --std=c++98 -Wall -Wextra -Werror
 endif
 
-NAME				=  phonebook
+NAME				=  fixed-point
 
 INC_DIR			= ./includes/
 
@@ -28,8 +28,7 @@ SRCS_DIR		= ./srcs/
 
 SRCS				= $(addprefix $(SRCS_DIR), \
 								main.cpp \
-								PhoneBook.cpp \
-								Contact.cpp \
+								Fixed.cpp \
 							)
 
 OBJS				= ${SRCS:%.cpp=%.o}
