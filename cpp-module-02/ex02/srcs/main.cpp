@@ -6,12 +6,12 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 10:08:21 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/28 23:37:52 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/29 11:05:46 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Fixed.hpp"
+#include "../includes/Fixed.hpp"
 
 int	main(void)
 {
@@ -26,8 +26,6 @@ int	main(void)
 
 	std::cout << b << std::endl;
 
-	// 여기서 호출되는 max 함수는 const인지 ??
-	// 매개변수 중 하나라도 const이면 const 함수 호출?
 	std::cout << Fixed::max(a, b) << std::endl;
 
 	return (0);

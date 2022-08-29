@@ -6,12 +6,12 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 10:08:21 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/29 01:20:34 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/29 11:13:03 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Fixed.hpp"
+#include "../includes/Fixed.hpp"
 
 int	main(void)
 {
@@ -26,13 +26,11 @@ int	main(void)
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
 	std::cout << "d is " << d << std::endl;
-	
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
-	std::cout << "test : " << c.toFloat() << std::endl;
+	std::cout <<"a is " << a.toInt() << " as integer" << std::endl;
+	std::cout <<"b is " << b.toInt() << " as integer" << std::endl;
+	std::cout <<"c is " << c.toInt() << " as integer" << std::endl;
+	std::cout <<"d is " << d.toInt() << " as integer" << std::endl;
 
-  return (0);
+	return (0);
 }
