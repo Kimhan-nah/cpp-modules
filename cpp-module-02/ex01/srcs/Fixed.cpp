@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 19:46:01 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/28 21:39:55 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/29 01:22:23 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ Fixed::Fixed(const int num)
 	// this->_raw = num * (1 << _frac_bit);
 	this->_raw = num << _frac_bit;
 	std::cout << "Int constructor called" << std::endl;
+	// std::cout << "int -> fixed : " << num << ", " << _raw << std::endl;
 	
 	// num = 7 = (111) = (111.00000000)
 	// _raw = 7 * (1000000000)
@@ -66,6 +67,7 @@ Fixed::Fixed(const float num)
 		// 왜냐면 부동소수는 지수부, 가수부로 표현되기 때문에 쉬프트 연산하면 값이 보장이 안 됨
     this->_raw = static_cast<int>(roundf(num * (1 << _frac_bit)));
 	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "float -> fixed : " << num << ", " << _raw << std::endl;
 
     // num = 7.62 = (111.1001 1110 1011 1000 ...)
     // _raw = roundf(7.62 * (100000000))
@@ -79,7 +81,7 @@ Fixed::Fixed(const float num)
 
 int Fixed::getRawBits(void) const
 {
-  std::cout << "getRawBits memeber function called" << std::endl;
+//   std::cout << "getRawBits memeber function called" << std::endl;
   return (this->_raw);
 }
 
@@ -92,10 +94,16 @@ void Fixed::setRawBits(int const raw)
 /*
 	고정소수점 -> 부동소수점
 */
-float Fixed::toFloat(void) const		// 고정소수점 -> 부동소수점
+float Fixed::toFloat(void) const
 {
+	// return (static_cast<float>(this->getRawBits()) / (1 << _frac_bit));
+	// return (static_cast<float>(_raw) / (1 << _frac_bit));
+
+	// 왜 밑에꺼는 안됨????????? 
+
+	// return ( static_cast<float>(this->_raw / (1 << _frac_bit)));
 	// return ( static_cast<float>(_raw / (1 << _frac_bit)));
-	return (static_cast<float>(_raw >> _frac_bit));
+	// return (static_cast<float>(_raw >> _frac_bit));
 }
 
 /*
