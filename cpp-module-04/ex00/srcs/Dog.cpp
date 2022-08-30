@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 13:02:16 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/30 13:52:23 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/31 00:27:33 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ Dog::Dog() : Animal() {
 	std::cout << "[Dog] Default Constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &copy) : Animal() {
+// Dog::Dog(const Dog &copy) : Animal() {
+Dog::Dog(const Dog &copy) {
 	*this = copy;
 	std::cout << "[Dog] Copy Constructor called" << std::endl;
 }
