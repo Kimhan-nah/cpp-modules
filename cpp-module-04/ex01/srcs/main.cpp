@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 13:02:11 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/31 00:12:25 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/31 00:57:19 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,18 @@ int main()
 		Animal	*arr[10];
 		for (int i = 0; i < 5; i++) {
 			arr[i] = new Dog();		// Dog() 생성자에서 Brain() 생성자 동적할당
+			std::cout << std::endl;
 		}
 		for (int i = 5; i < 10; i++) {
 			arr[i] = new Cat();
+			std::cout << std::endl;
 		}
 
 		std::cout << std::endl;
+		std::cout << std::endl;
 		for (int i = 0; i < 10; i++) {
 			delete arr[i];			// 소멸자 호출되면서 내부에서 Brain() 할당 해제 안 해주면 leak
+			std::cout << std::endl;
 		}
 	}
 
