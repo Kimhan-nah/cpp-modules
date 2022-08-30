@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 13:02:48 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/30 16:31:47 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/30 23:59:32 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ public:
 	Cat& operator=(const Cat &ref);
 
 	virtual void	makeSound() const;
+
+	Brain			*getBrain() const;
 };
 
 #endif

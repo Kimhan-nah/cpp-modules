@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 16:01:15 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/30 19:54:19 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/30 23:27:13 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	Brain& operator=(const Brain &ref);
 
 	const std::string *getIdeas() const;
+	void				setIdeas(int i, std::string &idea);
 
 };
 

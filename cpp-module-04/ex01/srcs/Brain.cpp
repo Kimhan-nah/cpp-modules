@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 16:09:12 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/30 19:46:25 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/08/31 00:02:32 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 Brain::Brain()
 {
 	for (int i = 0; i < 100; i++) {
-		ideas_[i] = "HELLO?\n";
+		ideas_[i] = "hello brain!";
 	}
 	std::cout << "[Brain] Default Constructor called" << std::endl;
 }
 
 Brain::Brain(const Brain &copy)
 {
-	std::cout << "Brain] Copy Constructor called" << std::endl;
+	std::cout << "[Brain] Copy Constructor called" << std::endl;
 	*this = copy;
 }
 
@@ -44,4 +44,9 @@ Brain& Brain::operator=(const Brain &ref)
 const std::string	*Brain::getIdeas() const
 {
 	return (ideas_);
+}
+
+void				Brain::setIdeas(int i, std::string &idea)
+{
+	ideas_[i] = idea;
 }
