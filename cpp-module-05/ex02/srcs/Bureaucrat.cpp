@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 04:31:27 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/31 11:07:06 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/01 04:45:06 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &ref)
 {
-	grade_ = ref.grade_;
+	if (this != &ref)
+		grade_ = ref.grade_;
 	return (*this);
 }
 
@@ -73,6 +74,12 @@ void			Bureaucrat::signForm(Form &form)
 		std::cout << name_ << " couldn't sign " << form.getName() 
 					<< " because " << e.what() << std::endl;
 	}
+}
+
+void			Bureaucrat::executeForm(Form const &form)
+{
+	form.execute(*this);
+	std::cout << name_ << " executed " << form.getName() << std::endl;
 }
 
 // Exception Class

@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 04:31:15 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/31 11:29:01 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/01 04:43:00 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ public:
 	void			increaseGrade();
 	void			decreaseGrade();
 	void			signForm(Form &form);
+	void			executeForm(Form const &form);
 
 	// exception class
 	class GradeTooHighException : public std::exception {

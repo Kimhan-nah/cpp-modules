@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 07:47:40 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/31 13:36:02 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/01 01:34:53 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,10 @@ public:
 	bool		getSigned() const;
 	int			getSignGrade() const;
 	int			getExecGrade() const;
+
 	// member function
 	void	beSigned(const Bureaucrat &authority);
+	void	executable(const Bureaucrat &executor) const;			// check execute
 
 	virtual void	execute(const Bureaucrat &executor) const = 0;		// pure virtual function
 
@@ -51,6 +53,14 @@ public:
 	};
 	class GradeTooLowException : public std::exception {
 		const char	*what() const throw();
+	};
+
+	class NoSignedException : public std::exception {		// no sign exception
+		const char *what() const throw();
+	};
+
+	class FileException : public std::exception {			// file exception
+		const char *what() const throw();
 	};
 
 };

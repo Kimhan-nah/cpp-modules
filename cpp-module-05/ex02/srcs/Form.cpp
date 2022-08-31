@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 07:47:36 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/31 11:43:07 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/01 01:57:18 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,41 +30,28 @@ Form::Form(const Form &copy)
 
 Form::~Form() {}
 
-Form& Form::operator=(const Form &ref)
-{
-	signed_ = ref.signed_;
+Form& Form::operator=(const Form &ref) {
+	if (this != &ref) {
+		// name_ = ref.name_;
+		signed_ = ref.signed_;
+		// sign_grade_ = ref.sign_grade_;
+		// exec_grade_ = ref.exec_grade_;
+	}
 	return (*this);
 }
 
 // getter
-std::string	Form::getName() const
-{
-	return (name_);
-}
-
-bool		Form::getSigned() const
-{
-	return (signed_);
-}
-
-int			Form::getSignGrade() const
-{
-	return (sign_grade_);
-}
-
-int			Form::getExecGrade() const
-{
-	return (exec_grade_);
-}
+std::string	Form::getName() const { return (name_); }
+bool		Form::getSigned() const { return (signed_); }
+int			Form::getSignGrade() const { return (sign_grade_); }
+int			Form::getExecGrade() const { return (exec_grade_); }
 
 // Exception Class's what() function overriding
-const char	*Form::GradeTooHighException::what() const throw ()
-{
+const char	*Form::GradeTooHighException::what() const throw () {
 	return ("Grade is too High");
 }
 
-const char	*Form::GradeTooLowException::what() const throw ()
-{
+const char	*Form::GradeTooLowException::what() const throw () {
 	return ("Grade is too Low");
 }
 
@@ -73,10 +60,15 @@ void		Form::beSigned(const Bureaucrat &authority)
 {
 	if (authority.getGrade() > sign_grade_)
 		throw GradeTooLowException();
-	if (signed_)
-		std::cout << name_ << " is already signed" << std::endl;
-	else
-		signed_ =true;
+	signed_ =true;
+}
+
+void		Form::executable(const Bureaucrat &executor) const
+{
+	if (!signed_)
+		throw NoSignedException();
+	if (executor.getGrade() > exec_grade_)
+		throw GradeTooHighException();
 }
 
 std::ostream	&operator<<(std::ostream &out, const Form &obj)
@@ -87,3 +79,4 @@ std::ostream	&operator<<(std::ostream &out, const Form &obj)
 		<< "Executable Grade : " << obj.getExecGrade() << std::endl << std::endl;
 	return (out);
 }
+

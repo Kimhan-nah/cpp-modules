@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 07:47:36 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/31 11:43:07 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/01 01:00:10 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ Form::~Form() {}
 
 Form& Form::operator=(const Form &ref)
 {
-	signed_ = ref.signed_;
+	if (this != &ref)
+		signed_ = ref.signed_;
 	return (*this);
 }
 

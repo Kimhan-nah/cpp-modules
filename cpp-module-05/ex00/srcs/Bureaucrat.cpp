@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 04:31:27 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/31 07:16:27 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/01 00:59:45 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &ref)
 {
-	grade_ = ref.grade_;
+	if (this != &ref)
+		grade_ = ref.grade_;
 	return (*this);
 }
 
