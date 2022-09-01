@@ -6,35 +6,33 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 04:31:27 by hannkim           #+#    #+#             */
-/*   Updated: 2022/09/01 01:00:04 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/01 13:48:47 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Bureaucrat.hpp"
 #include <iostream>
 
-Bureaucrat::Bureaucrat()
-	: name_("hannkim"), grade_(150) {}
+Bureaucrat::Bureaucrat() : name_("hannkim"), grade_(150) {}
 
-Bureaucrat::Bureaucrat(const std::string &name)
-	: name_(name), grade_(150) {}
+Bureaucrat::Bureaucrat(const std::string &name) : name_(name), grade_(150) {}
 
-Bureaucrat::Bureaucrat(const std::string &name, const int grade)
-	: name_(name), grade_(grade) {}
-
-Bureaucrat::Bureaucrat(const Bureaucrat &copy) : name_(copy.name_)
+Bureaucrat::Bureaucrat(const std::string &name, const int grade) : name_(name)
 {
 	if (grade_ < 1)
 		throw GradeTooHighException();
 	if (grade_ > 150)
 		throw GradeTooLowException();
-	grade_ = copy.grade_;
+	grade_ = 150;
 }
+
+Bureaucrat::Bureaucrat(const Bureaucrat &copy) : name_(copy.name_), grade_(copy.grade_) {}
 
 Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &ref)
 {
+	// const name can't change...? 
 	if (this != &ref)
 		grade_ = ref.grade_;
 	return (*this);
