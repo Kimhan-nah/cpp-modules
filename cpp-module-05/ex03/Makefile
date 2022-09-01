@@ -6,7 +6,7 @@
 #    By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 01:15:04 by hannkim           #+#    #+#              #
-#    Updated: 2022/08/31 11:47:32 by hannkim          ###   ########.fr        #
+#    Updated: 2022/09/01 22:43:33 by hannkim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SRCS				= $(addprefix $(SRCS_DIR), \
 								ShrubberyCreationForm.cpp \
 								RobotomyRequestForm.cpp \
 								PresidentialPardonForm.cpp \
+								Intern.cpp \
 							)
 
 OBJS				= ${SRCS:%.cpp=%.o}

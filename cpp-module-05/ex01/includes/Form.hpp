@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 07:47:40 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/31 11:28:58 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/02 00:34:50 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <string>
 # include <exception>
-// # include "Bureaucrat.hpp"
 # include "Bureaucrat.hpp"
 
 class	Bureaucrat;

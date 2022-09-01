@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 22:22:36 by hannkim           #+#    #+#             */
-/*   Updated: 2022/09/01 02:18:07 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/01 18:23:38 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,9 @@ void	ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 	executable(executor);
 	std::ofstream outfile;
 
-	// 음... 이게 뭘까...
-	outfile.exceptions(std::ofstream::failbit | std::ofstream::badbit);
-	try {
-		outfile.open(target_ + "_shrubbery");
-	} catch (const std::ofstream::failure &e) {
-		std::cout << e.what() << std::endl;
-	}
+	outfile.open(target_ + "_shrubbery");
+	if (!outfile.is_open())
+		throw FileException();
 	outfile << tree;
 	outfile.close();
 }

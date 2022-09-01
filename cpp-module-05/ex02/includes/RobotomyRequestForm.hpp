@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 22:13:25 by hannkim           #+#    #+#             */
-/*   Updated: 2022/09/01 02:23:45 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/01 20:01:03 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	RobotomyRequestForm();
 	RobotomyRequestForm(const std::string &target);
 	RobotomyRequestForm(const RobotomyRequestForm &copy);
-	~RobotomyRequestForm();
+	virtual ~RobotomyRequestForm();
 	RobotomyRequestForm& operator=(const RobotomyRequestForm &ref);
 
 	virtual void	execute(const Bureaucrat &executor) const;

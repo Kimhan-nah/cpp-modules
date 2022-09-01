@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 04:31:22 by hannkim           #+#    #+#             */
-/*   Updated: 2022/09/01 11:14:59 by hannkim          ###   ########.fr       */
+/*   Created: 2022/09/01 13:33:49 by hannkim           #+#    #+#             */
+/*   Updated: 2022/09/01 23:55:34 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,35 @@
 #include "../includes/ShrubberyCreationForm.hpp"
 #include "../includes/RobotomyRequestForm.hpp"
 #include "../includes/PresidentialPardonForm.hpp"
+#include "../includes/Intern.hpp"
 #include <iostream>
 
 int main()
 {
-	Bureaucrat 				hannkim("hannkim", 50);
-	ShrubberyCreationForm	shrubbery_form("home");
+	// ShrubberyCreationForm : sign 145, exec 137	<- 관목 심기
+	// RobotomyRequestForm : sign 72, exec 45		<- 로봇화
+	// PresidentialPardonForm : sign 25, exec 5		<- 대통령 사면
+	try {
+		Intern someRandomIntern;
+		Form* rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		Bureaucrat br("someone", 13);
 
-	hannkim.executeForm(shrubbery_form);
+		br.signForm(*rrf);
+		rrf->execute(br);
 
+		Form* scf;
+		scf = someRandomIntern.makeForm("shrubbery creation", "BERRYBBERY");
 
-	// exception 테스트 : 잘못된 생성자, 권한 없는 생성자가 sign or execute 시도할 경우
-	
+		Form* ppf;
+		ppf = someRandomIntern.makeForm("presidential pardon", "prisoner");
+
+		delete ppf;
+		delete scf;
+		delete rrf;
+	} catch (const std::exception& e) {
+		std::cout << e.what() << '\n';
+	}
 
     return (0);
 }

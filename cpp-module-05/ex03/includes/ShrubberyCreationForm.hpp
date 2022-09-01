@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 21:54:17 by hannkim           #+#    #+#             */
-/*   Updated: 2022/08/31 22:53:39 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/01 20:01:08 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	ShrubberyCreationForm();
 	ShrubberyCreationForm(const std::string &target);
 	ShrubberyCreationForm(const ShrubberyCreationForm &copy);
-	~ShrubberyCreationForm();
+	virtual ~ShrubberyCreationForm();
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm &ref);
 
 	virtual void	execute(const Bureaucrat &executor) const;

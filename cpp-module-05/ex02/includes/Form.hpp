@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 07:47:40 by hannkim           #+#    #+#             */
-/*   Updated: 2022/09/01 01:34:53 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/01 22:16:13 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 	Form();
 	Form(std::string name, int sign_grade, int exec_grade);
 	Form(const Form &copy);
-	~Form();
+	virtual ~Form();
 
 	Form& operator=(const Form &ref);
 
@@ -62,6 +62,11 @@ public:
 	class FileException : public std::exception {			// file exception
 		const char *what() const throw();
 	};
+
+	class	FailExecute : public std::exception {			// execute exception
+		const char *what() const throw();
+	};
+	
 
 };
 

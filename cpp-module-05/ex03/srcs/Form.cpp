@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 07:47:36 by hannkim           #+#    #+#             */
-/*   Updated: 2022/09/01 01:57:18 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/01 22:23:21 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,24 @@ const char	*Form::GradeTooLowException::what() const throw () {
 	return ("Grade is too Low");
 }
 
+const char	*Form::NoSignedException::what() const throw () {
+	return ("Not Signed");
+}
+
+const char	*Form::FileException::what() const throw () {
+	return ("File Error");
+}
+
+const char	*Form::FailExecute::what() const throw () {
+	return ("No permission to execute");
+}
+
 // change the form status to signed
 void		Form::beSigned(const Bureaucrat &authority)
 {
 	if (authority.getGrade() > sign_grade_)
 		throw GradeTooLowException();
-	signed_ =true;
+	signed_ = true;
 }
 
 void		Form::executable(const Bureaucrat &executor) const
@@ -68,7 +80,7 @@ void		Form::executable(const Bureaucrat &executor) const
 	if (!signed_)
 		throw NoSignedException();
 	if (executor.getGrade() > exec_grade_)
-		throw GradeTooHighException();
+		throw FailExecute();
 }
 
 std::ostream	&operator<<(std::ostream &out, const Form &obj)

@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 04:31:27 by hannkim           #+#    #+#             */
-/*   Updated: 2022/09/01 13:48:38 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/01 22:29:43 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ Bureaucrat::Bureaucrat(const std::string &name) : name_(name), grade_(150) {}
 
 Bureaucrat::Bureaucrat(const std::string &name, const int grade) : name_(name)
 {
-	if (grade_ < 1)
+	if (grade < 1)
 		throw GradeTooHighException();
-	if (grade_ > 150)
+	if (grade > 150)
 		throw GradeTooLowException();
-	grade_ = 150;
+	grade_ = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : name_(copy.name_), grade_(copy.grade_) {}
@@ -32,7 +32,6 @@ Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &ref)
 {
-	// const name can't change...? 
 	if (this != &ref)
 		grade_ = ref.grade_;
 	return (*this);
@@ -76,8 +75,8 @@ void			Bureaucrat::signForm(Form &form)
 
 void			Bureaucrat::executeForm(Form const &form)
 {
-	form.execute(*this);
 	std::cout << name_ << " executed " << form.getName() << std::endl;
+	form.execute(*this);
 }
 
 // Exception Class
