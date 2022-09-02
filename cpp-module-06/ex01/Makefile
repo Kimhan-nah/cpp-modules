@@ -8,7 +8,7 @@ else
 	CXXFLAGS	= --std=c++98 -Wall -Wextra -Werror
 endif
 
-NAME				=  #Name of program
+NAME				=  serialization
 
 INC_DIR			= ./includes/
 
@@ -16,6 +16,7 @@ SRCS_DIR		= ./srcs/
 
 SRCS				= $(addprefix $(SRCS_DIR), \
 								main.cpp \
+								Data.cpp \
 							)
 
 OBJS				= ${SRCS:%.cpp=%.o}
