@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 10:30:37 by hannkim           #+#    #+#             */
-/*   Updated: 2022/09/02 15:58:32 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/02 20:46:14 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,9 @@ int main(int argc, char **argv)
 	}
 
 	std::string	value = argv[1];
-	double	d;
 
-	try {
-		// Convert convert(value);
-		
-	} catch (std::exception &e) {
-		std::cout << "char: impossible" << std::endl;
-		std::cout << "int: impossible" << std::endl;
-		std::cout << "float: impossible" << std::endl;
-		std::cout << "double: impossible" << std::endl;
-	}
-
+	Convert convert(value);
+	convert.convert();
 
 	return (0);
 }

@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/09/02 17:59:06 by hannkim           #+#    #+#              #
+#    Updated: 2022/09/02 20:46:43 by hannkim          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CXX					= c++
 
 ifdef DEBUG
@@ -8,7 +20,7 @@ else
 	CXXFLAGS	= --std=c++98 -Wall -Wextra -Werror
 endif
 
-NAME				=  #Name of program
+NAME				=  convert
 
 INC_DIR			= ./includes/
 
@@ -16,6 +28,7 @@ SRCS_DIR		= ./srcs/
 
 SRCS				= $(addprefix $(SRCS_DIR), \
 								main.cpp \
+								Convert.cpp \
 							)
 
 OBJS				= ${SRCS:%.cpp=%.o}
