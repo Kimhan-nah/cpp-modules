@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 10:30:34 by hannkim           #+#    #+#             */
-/*   Updated: 2022/09/02 22:03:44 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/03 00:47:18 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,11 @@ void	Convert::convertFloat(const double d)
 	int nan_inf = checkNanInf();
 	if (nan_inf == 1 || nan_inf == 2)
 		std::cout << "nanf" << std::endl;
-	else if (nan_inf == 3 || nan_inf == 4)
+	else if (nan_inf == 3 || nan_inf == 4) {
+		if (value_.find("-"))
+			std::cout << "-";
 		std::cout << "inff" << std::endl;
+	}
 	else if (value_.find(".") != std::string::npos)		// find
 		std::cout << static_cast<float>(d) << "f" << std::endl;
 	else
@@ -81,8 +84,11 @@ void	Convert::convertDouble(const double d)
 	int nan_inf = checkNanInf();
 	if (nan_inf == 1 || nan_inf == 2)
 		std::cout << "nan" << std::endl;
-	else if (nan_inf == 3 || nan_inf == 4)
+	else if (nan_inf == 3 || nan_inf == 4) {
+		if (value_.find("-"))
+			std::cout << "-";
 		std::cout << "inf" << std::endl;
+	}
 	else if (value_.find(".") != std::string::npos)		// find
 		std::cout << static_cast<float>(d) << std::endl;
 	else
@@ -91,13 +97,13 @@ void	Convert::convertDouble(const double d)
 
 int		Convert::checkNanInf()
 {
-	if (!(value_.compare("nan")))
+	if (!(value_.compare("nan")) || !(value_.compare("-nan")))
 		return (1);
-	if (!(value_.compare("nanf")))
+	if (!(value_.compare("nanf")) || !(value_.compare("-nanf")))
 		return (2);
-	if (!(value_.compare("inf")))
+	if (!(value_.compare("inf")) || !(value_.compare("-inf")))
 		return (3);
-	if (!(value_.compare("inff")))
+	if (!(value_.compare("inff")) || !(value_.compare("-inff")))
 		return (4);
 	return (0);
 }
