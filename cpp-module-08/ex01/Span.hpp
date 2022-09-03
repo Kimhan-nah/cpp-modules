@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 18:31:33 by hannkim           #+#    #+#             */
-/*   Updated: 2022/09/03 20:59:41 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/03 22:22:41 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,11 @@ public:
 	Span& operator=(const Span &ref);
 
 	void	addNumber(const int num);
+	void	addNumber(const std::vector<int>::iterator &begin, const std::vector<int>::iterator &end);
+	
 	int		shortestSpan() const;
 	int		longestSpan() const;
 
-	void	Span::addNumberSequence(std::vector<int>::iterator pos, std::vector<int>::iterator begin, std::vector<int>::iterator end);
 };
 
 #endif

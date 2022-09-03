@@ -6,7 +6,7 @@
 #    By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/03 03:31:35 by hannkim           #+#    #+#              #
-#    Updated: 2022/09/03 03:32:33 by hannkim          ###   ########.fr        #
+#    Updated: 2022/09/03 22:29:06 by hannkim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ else
 	CXXFLAGS	= --std=c++98 -Wall -Wextra -Werror
 endif
 
-NAME				=  whatever
+NAME				=  mutanted
 
 SRCS				= main.cpp
 

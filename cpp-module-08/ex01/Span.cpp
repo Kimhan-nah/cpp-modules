@@ -6,13 +6,14 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 18:31:37 by hannkim           #+#    #+#             */
-/*   Updated: 2022/09/03 21:30:37 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/04 00:49:34 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <algorithm>
 #include <exception>
+#include <iostream>
 
 Span::Span() {}
 
@@ -43,7 +44,7 @@ int	Span::shortestSpan() const
 	std::vector<int> tmp(numbers_);
 	std::sort(tmp.begin(), tmp.end());		// ascending order
 	int min = tmp[1] - tmp[0];
-	for (int i = 0; i + 1 < tmp.size(); i++) {
+	for (unsigned int i = 0; i + 1 < tmp.size(); i++) {
 		if (tmp[i + 1] - tmp [i] < min)
 			min = tmp[i + 1] - tmp[i];
 	}
@@ -60,9 +61,13 @@ int	Span::longestSpan() const
 	return (max);
 }
 
-void	Span::addNumberSequence(std::vector<int>::iterator pos, std::vector<int>::iterator begin, std::vector<int>::iterator end)
+void	Span::addNumber(const std::vector<int>::iterator &begin, const std::vector<int>::iterator &end)
 {
-	
-	// void insert (iterator position, InputIterator first, InputIterator last);
-	numbers_.insert(pos, begin, end);
+	if (end - begin > n_)
+		throw std::runtime_error("out of bounds");
+    numbers_.insert(numbers_.end(), begin, end);
+
+    // for (std::vector<int>::iterator iter = numbers_.begin(); iter != numbers_.end(); iter++) {
+	// 	std::cout << *iter << ' ';
+    // }
 }
