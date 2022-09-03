@@ -6,15 +6,14 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 03:46:56 by hannkim           #+#    #+#             */
-/*   Updated: 2022/09/03 04:00:10 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/03 11:41:33 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "iter.hpp"
 
-int main()
-{
+int main() {
 	{
 		const char *arr = "abcdefg";
 		iter(arr, 7, fp);
@@ -26,7 +25,7 @@ int main()
 	{
 		std::string *arr = new std::string[5];
 		for (int i = 0; i < 5; i++) {
-			arr[i] = "hi";
+		arr[i] = "hi";
 		}
 		iter(arr, 5, fp);
 	}
