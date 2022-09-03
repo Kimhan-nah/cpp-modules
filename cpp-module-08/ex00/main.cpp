@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 14:34:33 by hannkim           #+#    #+#             */
-/*   Updated: 2022/09/03 18:29:58 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/03 21:10:17 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int main()
 		std::vector<int>::iterator iter;
 		for (int i = 0; i < 10; i++) {
 			iter = easyfind(v, i);
-			// std::cout << "[" << i << "] " << *iter << std::endl;
 			std::cout << "success to find: " << *iter << std::endl;
 		}
 	} catch (const std::exception &e) {

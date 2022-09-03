@@ -6,7 +6,7 @@
 /*   By: hannkim <hannkim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 14:35:42 by hannkim           #+#    #+#             */
-/*   Updated: 2022/09/03 18:26:23 by hannkim          ###   ########.fr       */
+/*   Updated: 2022/09/03 21:03:36 by hannkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typename T::iterator easyfind(T &container, int i)
 {
 	typename T::iterator iter = std::find(container.begin(), container.end(), i);
 	if (iter == container.end())
-		throw std::logic_error("Error: Easyfind fail");
+		throw std::runtime_error("Error: Easyfind fail");
 	return (iter);
 }
 
